@@ -11,5 +11,5 @@ app.get('/', function (req, res) {
 var com = spawn('dstat', ['-c', '--nocolor']);
 com.stdout.on('data', function(data){
 	var txt = new Buffer(data).toString('utf8', 0, data.length);
-	io.sockets.send(100 - parseInt(txt.split('  ')[2]));
+	io.sockets.send(100 - parseInt(txt.split('  ')[3]));
 });
